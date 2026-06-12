@@ -8,7 +8,7 @@ const Projects = () => {
       title: 'Sign Language Detection System',
       description: 'AI/ML powered system using Flask for real-time sign language detection and translation.',
       techStack: ['Python', 'Flask', 'TensorFlow', 'OpenCV'],
-      github: 'https://github.com/ritesh5102/Project-on-Sign-Language-Translation',
+      github: 'https://github.com/ritesh5102/Project-on-Sign-Language-Translation.',
       category: 'ai'
     },
     {

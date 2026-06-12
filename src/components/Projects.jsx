@@ -8,7 +8,7 @@ const Projects = () => {
       title: 'Sign Language Detection System',
       description: 'AI/ML powered system using Flask for real-time sign language detection and translation.',
       techStack: ['Python', 'Flask', 'TensorFlow', 'OpenCV'],
-      github: 'https://github.com/ritesh5102/Sign-Language-Detection',
+      github: 'https://github.com/ritesh5102/Project-on-Sign-Language-Translation',
       category: 'ai'
     },
     {
@@ -26,10 +26,10 @@ const Projects = () => {
       category: 'ai'
     },
     {
-      title: 'Crypto Trading Strategy',
+      title: 'Crypto Fraud Platform',
       description: 'Data analysis project implementing trading strategies and market trend predictions.',
       techStack: ['Python', 'Pandas', 'Scikit-learn', 'Matplotlib'],
-      github: 'https://github.com/ritesh5102/Crypto-Trading-Strategy',
+      github: 'https://github.com/ritesh5102/crypto-fraud-platform',
       category: 'data'
     }
   ]

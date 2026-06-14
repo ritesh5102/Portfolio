@@ -12,11 +12,11 @@ const Projects = () => {
       category: 'ai'
     },
     {
-      title: 'Store Management System',
-      description: 'Full-stack application for managing inventory, sales, and customer data efficiently.',
-      techStack: ['React', 'Node.js', 'MongoDB', 'Express'],
-      github: 'https://github.com/ritesh5102/Store-Management-System',
-      category: 'fullstack'
+      title: 'Customer Churn Prediction',
+      description: 'Machine learning model predicting customer attrition by analyzing behavioral metrics and churn indicators.',
+      techStack: ['Python', 'Scikit-learn', 'Pandas', 'XGBoost'],
+      github: 'https://github.com/ritesh5102/Customer_Churn_Prediction',
+      category: 'ai'
     },
     {
       title: 'Smart Farm',

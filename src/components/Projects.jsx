@@ -27,10 +27,11 @@ const Projects = () => {
       category: 'ai'
     },
     {
-      title: 'Crypto Fraud Platform',
-      description: 'Data analysis project implementing trading strategies and market trend predictions.',
-      techStack: ['Python', 'Pandas', 'Scikit-learn', 'Matplotlib'],
+      title: 'Crypto Fraud Intelligence',
+      description: 'An intelligence dashboard for detecting real-time cryptocurrency fraud, analyzing transactional risk, and streaming live alerts.',
+      techStack: ['Python', 'FastAPI', 'WebSockets', 'React'],
       github: 'https://github.com/ritesh5102/crypto-fraud-platform',
+      live: 'https://cryptofraudanalysis.netlify.app',
       category: 'data'
     }
   ]

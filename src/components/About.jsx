@@ -33,7 +33,7 @@ const About = () => {
                 Get In Touch
               </a>
               <a
-                href="/resume.pdf"
+                href="/Ritesh_Salve_Resume.pdf"
                 download="Ritesh_Salve_Resume.pdf"
                 className="px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transform hover:scale-105 transition-all duration-300 text-center flex items-center justify-center gap-2"
               >

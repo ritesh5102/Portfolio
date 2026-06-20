@@ -91,15 +91,50 @@ const Projects = () => {
                   onMouseMove={handleMouseMove}
                   className="glass-card glow-spotlight rounded-3xl p-8 hover:-translate-y-1.5 lg:col-span-2 flex flex-col md:flex-row gap-8 transition-all duration-300 relative border border-primary/20 bg-gradient-to-br from-primary/5 via-dark to-dark"
                 >
-                  {/* Featured Project Preview Image Placeholder */}
-                  <div className="w-full md:w-2/5 min-h-[220px] rounded-2xl bg-gradient-to-br from-cyan-500/10 via-primary/10 to-secondary/10 flex flex-col items-center justify-center border border-white/5 relative overflow-hidden group self-stretch">
-                    <div className="absolute inset-0 bg-darker/70 flex flex-col justify-center items-center p-4">
-                      <span className="text-5xl mb-3 animate-bounce">🌾</span>
-                      <span className="text-xs uppercase tracking-widest font-mono text-cyan-400 font-semibold mb-1">Featured Project</span>
-                      <span className="text-[10px] text-gray-400 font-mono">smartfarmcontrol.netlify.app</span>
+                  {/* Featured Project Preview Custom Interactive UI Mockup */}
+                  <div className="w-full md:w-2/5 min-h-[240px] rounded-2xl border border-white/5 relative overflow-hidden bg-darker/60 flex flex-col justify-between p-4 group select-none self-stretch">
+                    {/* Glass header */}
+                    <div className="flex items-center justify-between border-b border-white/5 pb-2">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                        <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        <span className="text-[10px] font-mono font-semibold text-gray-400">NODE_CONTROL_A1</span>
+                      </div>
+                      <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">LIVE FEED</span>
                     </div>
-                    {/* Glowing background grid lines */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:16px_16px]"></div>
+                    
+                    {/* Metric list */}
+                    <div className="space-y-2.5 my-3">
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-gray-400 flex items-center gap-1">🌡️ Temp</span>
+                        <span className="font-mono text-white font-bold">28.4°C</span>
+                      </div>
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-gray-400 flex items-center gap-1">💧 Moisture</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-16 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                            <div className="h-full bg-cyan-400 rounded-full" style={{ width: '64%' }}></div>
+                          </div>
+                          <span className="font-mono text-cyan-400 font-bold">64%</span>
+                        </div>
+                      </div>
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-gray-400 flex items-center gap-1">🌾 Yield Forecast</span>
+                        <span className="font-mono text-emerald-400 font-bold">+18.4%</span>
+                      </div>
+                    </div>
+
+                    {/* Scan overlay footer */}
+                    <div className="bg-white/5 rounded-lg p-2 flex items-center justify-between border border-white/10 text-[10px]">
+                      <div className="flex items-center gap-1.5 text-gray-300">
+                        <span className="text-xs">🔬</span>
+                        <span>CNN Crop Scan:</span>
+                      </div>
+                      <span className="text-emerald-400 font-semibold font-mono">Healthy (0.0% disease)</span>
+                    </div>
+                    
+                    {/* Grid background & sweep line */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:12px_12px] pointer-events-none -z-10"></div>
                   </div>
 
                   {/* Featured Project Content */}
@@ -168,6 +203,78 @@ const Projects = () => {
                 className="glass-card glow-spotlight rounded-2xl p-6 hover:-translate-y-2 group flex flex-col justify-between transition-all duration-300"
               >
                 <div>
+                  {/* Visual Mockup Overlay */}
+                  {project.title === 'Sign Language Detection System' && (
+                    <div className="w-full h-32 rounded-xl bg-darker/60 border border-white/5 relative overflow-hidden flex items-center justify-center p-3 mb-4 group-hover:border-primary/25 transition-all duration-300 select-none">
+                      <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-white/20"></div>
+                      <div className="absolute top-2 right-2 w-2 h-2 border-t border-r border-white/20"></div>
+                      <div className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-white/20"></div>
+                      <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-white/20"></div>
+                      <div className="text-center z-10">
+                        <div className="relative inline-block px-3 py-1.5 bg-primary/10 border border-primary/30 rounded-lg text-primary text-[10px] font-mono font-bold tracking-wide animate-pulse">
+                          Gesture: THANK YOU
+                        </div>
+                        <div className="mt-2 text-[9px] font-mono text-gray-500">
+                          Accuracy: 96.7% | Latency: 24ms
+                        </div>
+                      </div>
+                      <div className="absolute bottom-2 left-4 right-4 flex items-end justify-center gap-[3px] h-3">
+                        <div className="w-[2px] bg-primary/30 rounded-full h-1 animate-bounce" style={{ animationDuration: '0.8s' }}></div>
+                        <div className="w-[2px] bg-primary/50 rounded-full h-2 animate-bounce" style={{ animationDuration: '1.2s', animationDelay: '0.1s' }}></div>
+                        <div className="w-[2px] bg-primary/80 rounded-full h-3 animate-bounce" style={{ animationDuration: '1s', animationDelay: '0.2s' }}></div>
+                        <div className="w-[2px] bg-secondary/80 rounded-full h-2 animate-bounce" style={{ animationDuration: '0.9s', animationDelay: '0.3s' }}></div>
+                        <div className="w-[2px] bg-secondary/40 rounded-full h-1 animate-bounce" style={{ animationDuration: '1.1s', animationDelay: '0.4s' }}></div>
+                      </div>
+                      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:10px_10px] pointer-events-none"></div>
+                    </div>
+                  )}
+
+                  {project.title === 'Customer Churn Prediction' && (
+                    <div className="w-full h-32 rounded-xl bg-darker/60 border border-white/5 relative overflow-hidden flex flex-col justify-between p-3 mb-4 group-hover:border-secondary/25 transition-all duration-300 select-none">
+                      <div className="flex justify-between items-center z-10">
+                        <span className="text-[9px] font-mono text-gray-400">RETENTION_MODEL_V2</span>
+                        <span className="text-[9px] font-mono text-orange-400 font-semibold px-1.5 py-0.5 rounded bg-orange-500/10 border border-orange-500/20">PREDICTIVE</span>
+                      </div>
+                      <div className="flex justify-around items-center my-1.5 z-10">
+                        <div className="text-center">
+                          <span className="text-[8px] uppercase tracking-wider text-gray-500 block">Churn Risk</span>
+                          <span className="text-lg font-mono font-bold text-white">24.2%</span>
+                        </div>
+                        <div className="flex gap-1.5 items-end h-8">
+                          <div className="w-2.5 bg-red-500/80 rounded-t h-4"></div>
+                          <div className="w-2.5 bg-orange-500/80 rounded-t h-6"></div>
+                          <div className="w-2.5 bg-emerald-500/80 rounded-t h-8"></div>
+                        </div>
+                      </div>
+                      <div className="flex justify-between text-[8px] text-gray-500 border-t border-white/5 pt-1.5 z-10">
+                        <span>Accuracy: 89.4%</span>
+                        <span>UAT: Passed</span>
+                      </div>
+                      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:10px_10px] pointer-events-none"></div>
+                    </div>
+                  )}
+
+                  {project.title === 'Crypto Fraud Intelligence' && (
+                    <div className="w-full h-32 rounded-xl bg-darker/60 border border-white/5 relative overflow-hidden flex flex-col justify-between p-3 mb-4 group-hover:border-primary/25 transition-all duration-300 select-none">
+                      <div className="flex justify-between items-center z-10">
+                        <span className="text-[9px] font-mono text-gray-400">WEBSOCKET_MONITOR</span>
+                        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                      </div>
+                      <div className="font-mono text-[9px] text-gray-400 space-y-1 my-1 overflow-hidden h-14 z-10">
+                        <div className="truncate text-gray-500">&gt; listening block #19403...</div>
+                        <div className="truncate text-gray-500">&gt; Tx 0x7a...d3: risk score 0.05</div>
+                        <div className="truncate text-red-400 bg-red-950/20 px-1 border border-red-500/20 rounded">
+                          &gt; Tx 0x9f...8a: RISK 0.98! (CIRCULAR)
+                        </div>
+                      </div>
+                      <div className="flex justify-between text-[8px] text-gray-500 border-t border-white/5 pt-1 z-10">
+                        <span>Rate: 14 tx/sec</span>
+                        <span className="text-red-400 font-bold">1 Alert</span>
+                      </div>
+                      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:10px_10px] pointer-events-none"></div>
+                    </div>
+                  )}
+
                   <div className="flex justify-between items-center mb-3">
                     <span className="text-[10px] uppercase font-bold text-cyan-400 tracking-widest font-mono">Project</span>
                     {project.live && (

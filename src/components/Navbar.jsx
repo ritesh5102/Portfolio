@@ -69,8 +69,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <a href="#hero" className="text-2xl font-bold text-gradient tracking-wider">
+            <a href="#hero" className="text-2xl font-bold text-gradient tracking-wider flex items-center gap-1 group">
               RS
+              <span className="w-2 h-2 rounded-full bg-secondary group-hover:bg-primary transition-colors duration-500 animate-pulse"></span>
             </a>
           </div>
           

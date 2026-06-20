@@ -1,4 +1,13 @@
 const About = () => {
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget
+    const rect = card.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    card.style.setProperty('--mouse-x', `${x}px`)
+    card.style.setProperty('--mouse-y', `${y}px`)
+  }
+
   return (
     <section id="about" className="py-20 bg-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,7 +19,10 @@ const About = () => {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="bg-darker rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]">
+          <div
+            onMouseMove={handleMouseMove}
+            className="glass-card glow-spotlight rounded-2xl p-8 hover:-translate-y-1 transition-all duration-300"
+          >
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
               I'm a passionate AI Developer and Software Engineer with a strong foundation in 
               machine learning, LLM integrations, and modern cloud technologies. I specialize in building 

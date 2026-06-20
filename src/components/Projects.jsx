@@ -36,6 +36,15 @@ const Projects = () => {
     }
   ]
 
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget
+    const rect = card.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    card.style.setProperty('--mouse-x', `${x}px`)
+    card.style.setProperty('--mouse-y', `${y}px`)
+  }
+
   const filteredProjects = filter === 'all' 
     ? projects 
     : projects.filter(project => project.category === filter)
@@ -97,7 +106,8 @@ const Projects = () => {
           {filteredProjects.map((project, index) => (
             <div
               key={index}
-              className="bg-darker rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group"
+              onMouseMove={handleMouseMove}
+              className="glass-card glow-spotlight rounded-2xl p-6 hover:-translate-y-2 group flex flex-col justify-between"
             >
               <div className="mb-4">
                 <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-gradient transition-all duration-300">

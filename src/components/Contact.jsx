@@ -2,6 +2,15 @@ import { useState } from 'react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget
+    const rect = card.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    card.style.setProperty('--mouse-x', `${x}px`)
+    card.style.setProperty('--mouse-y', `${y}px`)
+  }
   const [status, setStatus] = useState('idle') // idle | sending | success
 
   const contactInfo = [
@@ -63,9 +72,10 @@ const Contact = () => {
             <a
               key={index}
               href={contact.link}
+              onMouseMove={handleMouseMove}
               target={contact.link.startsWith('http') ? '_blank' : undefined}
               rel={contact.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className="bg-darker rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group"
+              className="glass-card glow-spotlight rounded-2xl p-6 hover:-translate-y-2 group flex flex-col justify-between"
             >
               <div className="text-4xl mb-4 group-hover:animate-bounce">
                 {contact.icon}
@@ -81,7 +91,10 @@ const Contact = () => {
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <div className="bg-darker rounded-2xl p-8 shadow-xl">
+          <div
+            onMouseMove={handleMouseMove}
+            className="glass-card glow-spotlight rounded-2xl p-8"
+          >
             <h3 className="text-2xl font-bold text-white mb-6 text-center">
               Send me a message
             </h3>

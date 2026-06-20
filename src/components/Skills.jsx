@@ -1,27 +1,47 @@
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Core AI & ML',
-      icon: '🤖',
-      skills: ['Python', 'TensorFlow / PyTorch', 'Scikit-Learn', 'OpenCV'],
+      title: 'Languages',
+      icon: '💻',
+      skills: [
+        { name: 'Python', level: 90 },
+        { name: 'SQL', level: 85 },
+        { name: 'JavaScript', level: 75 },
+        { name: 'C++', level: 70 }
+      ],
       color: 'from-blue-500/20 to-indigo-500/20 text-blue-400 border-blue-500/30'
     },
     {
-      title: 'Generative AI & LLMs',
-      icon: '✨',
-      skills: ['OpenAI / Anthropic APIs', 'Hugging Face', 'LangChain', 'Prompt Engineering'],
+      title: 'ML / AI',
+      icon: '🤖',
+      skills: [
+        { name: 'TensorFlow / PyTorch', level: 80 },
+        { name: 'Scikit-Learn', level: 85 },
+        { name: 'LLM API Integration', level: 80 },
+        { name: 'OpenCV', level: 75 }
+      ],
       color: 'from-purple-500/20 to-pink-500/20 text-purple-400 border-purple-500/30'
     },
     {
-      title: 'Cloud & AI Ops',
-      icon: '☁️',
-      skills: ['AWS Bedrock / SageMaker', 'FastAPI / Flask', 'Docker', 'Vector Databases (Chroma/Pinecone)'],
+      title: 'Data Tools',
+      icon: '📊',
+      skills: [
+        { name: 'Pandas & NumPy', level: 90 },
+        { name: 'Power BI & Excel', level: 85 },
+        { name: 'Data Visualization', level: 85 },
+        { name: 'ETL Pipelines', level: 75 }
+      ],
       color: 'from-orange-500/20 to-red-500/20 text-orange-400 border-orange-500/30'
     },
     {
-      title: 'Development & SQL',
-      icon: '🛠️',
-      skills: ['SQL & NoSQL', 'Git & GitHub', 'React / Node.js', 'CI/CD Basics'],
+      title: 'Web Stack',
+      icon: '🌐',
+      skills: [
+        { name: 'React.js / Node.js', level: 75 },
+        { name: 'FastAPI / Flask', level: 80 },
+        { name: 'AWS Bedrock / Cloud', level: 75 },
+        { name: 'Git & GitHub', level: 90 }
+      ],
       color: 'from-green-500/20 to-emerald-500/20 text-green-400 border-green-500/30'
     }
   ]
@@ -41,8 +61,8 @@ const Skills = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient mb-4">
-            Skills
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient mb-4 font-display">
+            Technical Skills
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
         </div>
@@ -55,19 +75,27 @@ const Skills = () => {
               className="glass-card glow-spotlight rounded-2xl p-6 hover:-translate-y-2 group flex flex-col justify-between"
             >
               <div>
-                <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${category.color.split(' ')[0]} ${category.color.split(' ')[1]} border ${category.color.split(' ')[3]} flex items-center justify-center text-3xl transition-transform duration-300 group-hover:scale-110 shadow-lg`}>
+                <div className={`w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${category.color.split(' ')[0]} ${category.color.split(' ')[1]} border ${category.color.split(' ')[3]} flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110 shadow-lg`}>
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-6 text-center tracking-wide">
+                <h3 className="text-lg font-bold text-white mb-6 text-center tracking-wide font-display">
                   {category.title}
                 </h3>
-                <div className="space-y-2.5">
+                <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
-                    <div
-                      key={skillIndex}
-                      className="bg-darker/60 border border-white/5 rounded-lg px-4 py-2 text-center text-gray-300 text-sm font-medium hover:text-white hover:border-primary/35 hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 transition-all duration-300 shadow-sm"
-                    >
-                      {skill}
+                    <div key={skillIndex} className="space-y-1.5">
+                      <div className="flex justify-between text-xs font-semibold text-gray-300">
+                        <span>{skill.name}</span>
+                        <span className="text-primary font-mono">{skill.level}%</span>
+                      </div>
+                      <div className="h-2 bg-darker/60 border border-white/5 rounded-full overflow-hidden relative">
+                        <div
+                          className="h-full bg-gradient-to-r from-primary to-secondary rounded-full relative transition-all duration-1000 ease-out"
+                          style={{ width: `${skill.level}%` }}
+                        >
+                          <div className="absolute right-0 top-0 bottom-0 w-1.5 bg-white shadow-[0_0_8px_#ffffff] rounded-full"></div>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>

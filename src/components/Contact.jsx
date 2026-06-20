@@ -115,11 +115,8 @@ const Contact = () => {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                    Name
-                  </label>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="relative">
                   <input
                     type="text"
                     id="name"
@@ -127,14 +124,17 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-dark border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
-                    placeholder="Your name"
+                    className="block w-full px-4 pt-6 pb-2 bg-dark/60 border border-white/10 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 peer text-sm"
+                    placeholder="Name"
                   />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    Email
+                  <label
+                    htmlFor="name"
+                    className="absolute left-4 top-2 text-gray-500 text-xs transition-all duration-300 pointer-events-none peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary font-semibold"
+                  >
+                    Name
                   </label>
+                </div>
+                <div className="relative">
                   <input
                     type="email"
                     id="email"
@@ -142,14 +142,17 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-dark border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
-                    placeholder="your.email@example.com"
+                    className="block w-full px-4 pt-6 pb-2 bg-dark/60 border border-white/10 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 peer text-sm"
+                    placeholder="Email"
                   />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                    Message
+                  <label
+                    htmlFor="email"
+                    className="absolute left-4 top-2 text-gray-500 text-xs transition-all duration-300 pointer-events-none peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary font-semibold"
+                  >
+                    Email
                   </label>
+                </div>
+                <div className="relative">
                   <textarea
                     id="message"
                     name="message"
@@ -157,9 +160,15 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows="4"
-                    className="w-full px-4 py-3 bg-dark border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 resize-none"
-                    placeholder="Your message..."
+                    className="block w-full px-4 pt-6 pb-2 bg-dark/60 border border-white/10 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 resize-none peer text-sm"
+                    placeholder="Message"
                   ></textarea>
+                  <label
+                    htmlFor="message"
+                    className="absolute left-4 top-2 text-gray-500 text-xs transition-all duration-300 pointer-events-none peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary font-semibold"
+                  >
+                    Message
+                  </label>
                 </div>
                 <button
                   type="submit"

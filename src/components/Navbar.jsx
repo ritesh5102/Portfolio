@@ -31,7 +31,7 @@ const Navbar = () => {
       })
     }, observerOptions)
 
-    const sections = ['hero', 'about', 'skills', 'projects', 'experience', 'contact']
+    const sections = ['hero', 'about', 'skills', 'projects', 'experience', 'achievements', 'contact']
     sections.forEach((id) => {
       const el = document.getElementById(id)
       if (el) observer.observe(el)
@@ -50,6 +50,7 @@ const Navbar = () => {
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Honors', href: '#achievements' },
     { name: 'Contact', href: '#contact' },
   ]
 

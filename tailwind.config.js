@@ -6,12 +6,19 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: '#6366f1',
-        secondary: '#8b5cf6',
-        dark: '#0f172a',
-        darker: '#020617',
+      fontFamily: {
+        display: ['"Space Grotesk"', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
       },
+      colors: {
+        primary: '#8b5cf6', // Electric Violet
+        secondary: '#06b6d4', // Electric Cyan
+        dark: '#0b0f19', // Deep navy slate
+        darker: '#030712', // Deep space background
+      },
+      animation: {
+        'spin-slow': 'spin 15s linear infinite',
+      }
     },
   },
   plugins: [],
